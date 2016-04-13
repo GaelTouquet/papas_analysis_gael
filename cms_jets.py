@@ -158,7 +158,7 @@ jet_cone_tree = cfg.Analyzer(
     )
 
 from heppy.analyzers.Papas import Papas
-from heppy.papas.detectors.TunedCMS import CMS
+from papas_analysis_gael.TunedCMS import CMS
 papas = cfg.Analyzer(
     Papas,
     instance_label = 'papas',
