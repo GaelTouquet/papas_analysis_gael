@@ -147,7 +147,7 @@ cone_tree = cfg.Analyzer(
     particles = 'coned_ptcs'
 )
 
-from JetConeTreeProducer import JetConeTreeProducer
+from papas_analysis_gael.analyzers.JetConeTreeProducer import JetConeTreeProducer
 jet_cone_tree = cfg.Analyzer(
     JetConeTreeProducer,
     tree_name = 'events',
