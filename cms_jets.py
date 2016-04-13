@@ -7,14 +7,12 @@ debug = False
 if debug:
     print 'DEBUG MODE IS ON!'
 
-comp = cfg.Component(
-    'singlepi',
-    #files = ['/gridgroup/cms/cbernet/data/singleK0L.root']
-    #files = ['/gridgroup/cms/cbernet/data/singlePhoton.root']
-    files = ['/gridgroup/cms/cbernet/data/singlePi_50k.root']
-)
+from papas_analysis_gael.samples.single_cms import single_charged_hadrons, single_neutral_hadrons, single_photons
 
-selectedComponents = [comp]
+# selectedComponents = [single_charged_hadrons, single_neutral_hadrons, single_photons]
+
+selectedComponents = [single_charged_hadrons]
+single_charged_hadrons.splitFactor = len(single_charged_hadrons.files)
 
 from heppy.analyzers.cms.JetReader import JetReader
 source = cfg.Analyzer(
