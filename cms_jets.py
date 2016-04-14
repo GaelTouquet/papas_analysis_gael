@@ -11,7 +11,7 @@ from papas_analysis_gael.samples.single_cms import single_charged_hadrons, singl
 
 # selectedComponents = [single_charged_hadrons, single_neutral_hadrons, single_photons]
 
-selectedComponents = [single_charged_hadrons]
+selectedComponents = [single_photons]
 single_charged_hadrons.splitFactor = len(single_charged_hadrons.files)
 
 from heppy.analyzers.cms.JetReader import JetReader
@@ -22,6 +22,12 @@ source = cfg.Analyzer(
     jets = 'ak4PFJets', 
     jet_pt = 0.5,
     nlead = 2 
+)
+
+from papas_analysis_gael.analyzers.SimTrackReader import SimTrackReader
+simtrack_reader = cfg.Analyzer(
+    SimTrackReader,
+    SimTrack = 'g4SimHits'
 )
 
 from heppy.analyzers.cms.Reader import CMSReader
@@ -38,6 +44,15 @@ cone_ana = cfg.Analyzer(
     rec_particles = 'rec_particles',
     output = 'coned_ptcs',
     pf_cone_ptcs = 'rec_cone_ptcs',
+    control_cone_ptcs = 'control_cone_ptcs'
+)
+
+pf_cone_ana = cfg.Analyzer(
+    ConeAnalyzer,
+    particle = 'gen_particles_stable',
+    rec_particles = 'pf_particles',
+    output = 'coned_ptcs',
+    pf_cone_ptcs = 'pf_cone_ptcs',
     control_cone_ptcs = 'control_cone_ptcs'
 )
 
@@ -150,7 +165,7 @@ jet_cone_tree = cfg.Analyzer(
     JetConeTreeProducer,
     tree_name = 'events',
     tree_title = 'jets',
-    jet = 'rec_cone_jets',
+    jet = 'pf_cone_jets',
     control_jet = 'control_cone_jets',
     gen_jet = 'gen_jets'
     )
@@ -181,12 +196,15 @@ if debug:
 # the analyzers will process each event in this order
 sequence = cfg.Sequence( [
     source_ptc,
-    papas,
-    cone_ana,
-    gen_jets,
-    rec_cone_jets,
-    control_cone_jets,
-    jet_cone_tree
+    simtrack_reader
+#    #papas,
+#    #cone_ana,
+#    pf_cone_ana,
+#    pf_cone_jets,
+#    gen_jets,
+#    #rec_cone_jets,
+#    control_cone_jets,
+#    jet_cone_tree
     ] )
 
     
