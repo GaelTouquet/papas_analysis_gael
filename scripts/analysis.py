@@ -1,7 +1,7 @@
 from ROOT import TFile
-from style import papas_style, cms_style
-from Comparator import CompHandler
-from Hist import Hist
+from papas_analysis_gael.tools.style import papas_style, cms_style
+from papas_analysis_gael.tools.Comparator import CompHandler
+from papas_analysis_gael.tools.Hist import Hist
 
 papas_file = TFile('./rootfiles/papassampletuned2.root')
 cms_file = TFile('./rootfiles/cmssamplejetted.root')

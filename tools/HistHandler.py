@@ -1,4 +1,4 @@
-from Hist import Hist
+from papas_analysis_gael.tools.Hist import Hist
 from ROOT import TCanvas
 
 class HistHandler(object):

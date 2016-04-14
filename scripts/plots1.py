@@ -1,7 +1,7 @@
-from Hist import Hist
+from papas_analysis_gael.tools.Hist import Hist
 from ROOT import TFile, TCanvas
-from style import papas_style, cms_style
-from HistHandler import HistHandler
+from papas_analysis_gael.tools.style import papas_style, cms_style
+from papas_analysis_gael.tools.HistHandler import HistHandler
 
 basecut = 'jet1_pt>1 && jet1_pt<10 && jet1_rec_pt>0 && abs(jet1_eta)<1.3'
 

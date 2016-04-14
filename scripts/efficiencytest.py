@@ -1,5 +1,5 @@
 from ROOT import TFile, TCanvas
-from HistEfficiency import HistEfficiency
+from papas_analysis_gael.tools.HistEfficiency import HistEfficiency
 from cpyroot.tools.style import *
 
 fil = TFile('./rootfiles/papassample.root')

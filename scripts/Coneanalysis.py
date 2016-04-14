@@ -1,6 +1,6 @@
 from ROOT import TFile
-from style import papas_style, cms_style
-from HistHandler import HistHandler
+from papas_analysis_gael.tools.style import papas_style, cms_style
+from papas_analysis_gael.tools.HistHandler import HistHandler
 
 cms_file = TFile('./rootfiles/Coneanalysis.root')
 

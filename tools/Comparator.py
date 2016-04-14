@@ -1,5 +1,5 @@
 from ROOT import TLegend, TCanvas
-from style import cms_style, papas_style
+from papas_analysis_gael.tools.style import cms_style, papas_style
 
 class Comparator(object):
     
