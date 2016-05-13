@@ -25,8 +25,60 @@ single_charged_hadrons_lfns = [
     '/store/mc/RunIISpring15DR74/SinglePiPlus_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/DE9B9D6F-470E-E511-A4FA-0002C92DB464.root',
     '/store/mc/RunIISpring15DR74/SinglePiPlus_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/E6616906-440E-E511-B747-0025905A48D8.root',
     '/store/mc/RunIISpring15DR74/SinglePiPlus_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/EA587EAB-430E-E511-8EDB-00259059649C.root',
-    '/store/mc/RunIISpring15DR74/SinglePiPlus_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/F29D5B8D-9B0E-E511-805B-B8CA3A709648.root',
-    ]
+    '/store/mc/RunIISpring15DR74/SinglePiPlus_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/F29D5B8D-9B0E-E511-805B-B8CA3A709648.root']
+
+
+single_photons_lfns = [
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/0466CB53-090E-E511-895E-0002C90B397A.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/0604B89E-090E-E511-9842-00248C55CC9D.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/0CCC9888-0C0E-E511-99A9-002618943870.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/14EE3049-570E-E511-A512-0025905A608C.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/1EEEE944-070E-E511-B94C-002618FDA21D.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/3070C3F8-080E-E511-9A0C-00248C0BE012.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/4EABF528-0C0E-E511-8CB4-0002C94D575E.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/62195551-570E-E511-AD4F-AC162DA8C2B0.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/66DAAD3A-0A0E-E511-977B-0025905B8562.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/7685BC63-080E-E511-A705-AC162DAB0B08.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/8C22F7FC-080E-E511-BD60-002618943960.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/947DA772-070E-E511-B797-00074305CD11.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/AC3F6F7B-570E-E511-A1F1-A0040420FE80.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/C07F67D0-0B0E-E511-8B1E-008CFA051DA8.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/CEA5A93D-0A0E-E511-BFC7-0025905B858E.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/D0CA8E43-070E-E511-A4EB-C4346BC8D568.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/D8893C3A-0A0E-E511-9C72-0025905A60D2.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/D8C2BBA9-0A0E-E511-9F80-003048FFD7BE.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/DAD4D639-0A0E-E511-B66C-0025905A60B0.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/EA0A85A5-090E-E511-933E-003048FFD744.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/F083BAE9-060E-E511-AAC2-008CFA05206C.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/F09B28F8-080E-E511-BDF7-0026189438DF.root',
+'/store/mc/RunIISpring15DR74/SinglePhoton_E-0to100_Flat_13TeV_FlatRandomEGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/10000/F6D0E891-0A0E-E511-A937-00074305CD11.root']
+
+single_neutral_hadrons_lfns = [
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/0221F754-050E-E511-8CAB-0002C92DB4CC.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/04145FA2-000E-E511-9225-3417EBE46EDF.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/1EE1F416-000E-E511-87DF-0002C952E75A.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/287E9510-050E-E511-947C-0002C92DB4CC.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/2CBAC11F-020E-E511-B04E-0002C952E75A.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/4009146A-020E-E511-B6EF-0002C90B7FE0.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/42491F6D-020E-E511-B661-0002C94D5618.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/4833F9C4-030E-E511-9904-0CC47A4D9A42.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/642EE380-000E-E511-8F6D-20CF305B0572.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/74EE7116-020E-E511-87AB-7845C4FC3C86.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/7CC5D108-030E-E511-BED2-00074305CC0C.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/A8DD5E30-0A0E-E511-B6A5-A0040420FE80.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/AC19FB47-070E-E511-B34D-00A0D1EE27B0.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/AE700233-020E-E511-BB04-848F69FD4E41.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/B2EF2AFC-000E-E511-9A6D-3417EBE6444A.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/B6B897BA-030E-E511-91B1-0002C90A37CA.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/C2423F08-050E-E511-99B7-0002C90A3576.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/C444CB4B-040E-E511-BA3C-848F69FD299D.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/CCC6BF24-020E-E511-800D-00074305CC6F.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/D6D5FEAF-000E-E511-845A-00074305CE01.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/E4175987-010E-E511-B41C-A0040420FE80.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/E43A9ADA-580E-E511-BD08-3417EBE64B4F.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/E8384D62-580E-E511-A2ED-0002C90F8030.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/EC38833B-590E-E511-A804-20CF300E9ECF.root',
+'/store/mc/RunIISpring15DR74/SingleK0L_P-1to2000_Expo_13TeV_ExpoRandomPGun/GEN-SIM-RECO/AsymptNoPUReco_MCRUN2_74_V9A-v1/00000/F4B102AD-050E-E511-AFD3-00266CFAEA48.root']
 
 single_charged_hadrons = cfg.Component(
     'single_charged_hadrons',
@@ -36,12 +88,14 @@ single_charged_hadrons = cfg.Component(
 
 single_neutral_hadrons = cfg.Component(
     'single_neutral_hadrons',
-    files = ['/gridgroup/cms/cbernet/data/singleK0L.root']
+    #files = ['/gridgroup/cms/cbernet/data/singleK0L.root']
+    files = map(xrootd, single_neutral_hadrons_lfns)
     )
 
 single_photons = cfg.Component(
     'single_photons',
-    files = ['/gridgroup/cms/cbernet/data/singlePhoton.root']
+    #files = ['/gridgroup/cms/cbernet/data/singlePhoton.root']
+    files = map(xrootd, single_photons_lfns)
     )
 
 if __name__ == '__main__':

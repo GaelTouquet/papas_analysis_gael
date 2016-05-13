@@ -43,7 +43,7 @@ cms_style = Style('cms',
                   fillColor = 0,
                   fillStyle = 0 )
 
-cms_style2 = Style('cms2',
+cms_style2 = Style('cms_control',
                   markerStyle = 3,
                   markerColor = 3,
                   markerSize = 1,
@@ -52,3 +52,13 @@ cms_style2 = Style('cms2',
                   lineWidth = 2,
                   fillColor = 0,
                   fillStyle = 0 )
+
+papas_style2 = Style('papas_control',
+                    markerStyle = 2,
+                    markerColor = 5,
+                    markerSize = 1,
+                    lineStyle = 1,
+                    lineColor = 5,
+                    lineWidth = 2,
+                    fillColor = 0,
+                    fillStyle = 0 )
