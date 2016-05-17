@@ -73,7 +73,7 @@ class HCAL(DetectorElement):
         eta = abs(cluster.position.Eta())
         if eta < 1.3 :
             if energy>1:
-                return True#random.uniform(0,1)<(1/(1+math.exp((energy+2.66331)/(-1.14107e+01))))
+                return random.uniform(0,1)<(1/(1+math.exp((energy-1.93816)/(-1.75330))))
             else:
                 return False
         elif eta < 3. : 

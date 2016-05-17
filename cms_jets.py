@@ -12,6 +12,7 @@ from papas_analysis_gael.samples.single_cms import single_charged_hadrons, singl
 
 # selectedComponents = [single_charged_hadrons, single_neutral_hadrons, single_photons]
 
+#single_neutral_hadrons.files = [single_neutral_hadrons.files[12]]
 selectedComponents = [single_neutral_hadrons]
 single_charged_hadrons.splitFactor = len(single_charged_hadrons.files)
 single_neutral_hadrons.splitFactor = len(single_neutral_hadrons.files)
@@ -141,7 +142,7 @@ jet_cone_tree = cfg.Analyzer(
     )
 
 from heppy.analyzers.Papas import Papas
-from papas_analysis_gael.analyzers.TunedCMS import CMS
+from heppy.papas.detectors.CMS import CMS
 papas = cfg.Analyzer(
     Papas,
     instance_label = 'papas',

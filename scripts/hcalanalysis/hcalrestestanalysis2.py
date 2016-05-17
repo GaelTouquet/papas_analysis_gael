@@ -14,7 +14,7 @@ def ymax(h1=None, h2=None):
 
 canvas = []
 
-fil = TFile('./rootfiles/neutral_hadron_test_tree.root')
+fil = TFile('./rootfiles/neutral_hadron_test_tree2.root')
 tree = fil.Get('events')
 
 fittercms = Fitter2D('histocms','cms', 100, 0, 100, 200, 0, 2)
@@ -64,13 +64,5 @@ comp_erec_egen_noecalhit = HistComparator(tree, style1 = cms_style,
                                 cut2 = 'gen_jet_pt>0 && abs(gen_jet_eta)<1.3 && simtrack_len==1 && papasjet_22_e/papasjet_e<0.01')
 
 
-#print 'cms integral :', comp_erec_egen_noecalhit.hist1.Integral()
-#print 'papas integral :', comp_erec_egen_noecalhit.hist2.Integral()
-
-comp_erec_egen_noecalhit_endcap = HistComparator(tree, style1 = cms_style, 
-                                  style2 = papas_style,
-                      nbin = 200, xmin = 0, xmax = 5, xvar = 'E_{rec}/E_{gen}',
-                      var1 = 'cmsjet_e/gen_jet_e', 
-                      cut1 = 'gen_jet_pt>0 && abs(gen_jet_eta)>1.3 && abs(gen_jet_eta)<3 && simtrack_len==1 && cmsjet_22_e/cmsjet_e<0.01',
-                      var2 = 'papasjet_e/gen_jet_e',
-                                cut2 = 'gen_jet_pt>0 && abs(gen_jet_eta)>1.3 && abs(gen_jet_eta)<3 && simtrack_len==1 && papasjet_22_e/papasjet_e<0.01')
+print 'cms integral :', comp_erec_egen_noecalhit.hist1.Integral()
+print 'papas integral :', comp_erec_egen_noecalhit.hist2.Integral()
