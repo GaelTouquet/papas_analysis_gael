@@ -39,7 +39,7 @@ comp_endcap = HistComparator(tree, style1 = cms_style, style2 = papas_style,
                       var2 = 'papasjet_e/gen_jet_e',
                       cut2 = 'gen_jet_pt>0 && abs(gen_jet_eta)>1.3 && abs(gen_jet_eta)<3. && simtrack_len==1 && papasjet_22_e/papasjet_e<0.01')
 
-fittere = Fitter2D('histo2de','E_{rec}/E_{gen}vsE_{gen} endcap', 200, 5, 100, 200, 0, 2)
+fittere = Fitter2D('histo2de','E_{rec}/E_{gen}vsE_{gen} endcap', 200, 10, 100, 200, 0, 2)
 tree.Project('histo2de','cmsjet_e/gen_jet_e:gen_jet_e','gen_jet_pt>0 && abs(gen_jet_eta)>1.3 && abs(gen_jet_eta)<3. && simtrack_len==1 && cmsjet_22_e/cmsjet_e<0.01')
 fittere.fit_slices()
 can3e = TCanvas()
@@ -55,5 +55,5 @@ fittere.hmean.Fit('responsee', 'B')
 can2e = TCanvas()
 fittere.hsigma.SetTitle('Fitted value of Sigma endcap')
 fittere.hsigma.Draw()
-erese = TF1('erese','sqrt(([0]/sqrt(x))**2+[1]**2)')
+erese = TF1('erese','sqrt(([0]/sqrt(x))**2+([1]/x)**2+[2]**2)')
 fittere.hsigma.Fit('erese')
