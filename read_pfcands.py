@@ -32,14 +32,14 @@ for event in events:
             print '\ttrack', pfc.trackRef().get().pt()
         if abs(pfc.pdgId())==211:
             eles = pfc.elementsInBlocks()
-            for ele in eles: 
+            blocks = dict()
+            for ele in eles:
                 block = ele.first.get()
-                print block
-                eleindex = ele.second
-                elements = block.elements()
-                element = elements[eleindex]
-                element.Dump()
-                print
+                blocks.setdefault(block, []).append(ele.second)
+                import pdb; pdb.set_trace()
+            for block, eles in blocks.iteritems():
+                block.print_info()
+                print 'element indices', eles
     print 'Tracks', '-'*20
     event.getByLabel('generalTracks', trackh)
     for track in trackh.product():
