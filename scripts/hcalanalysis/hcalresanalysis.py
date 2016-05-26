@@ -13,7 +13,7 @@ comp = HistComparator(tree, style1 = cms_style, style2 = papas_style,
                       var2 = 'papasjet_e/gen_jet_e',
                       cut2 = 'gen_jet_pt>0 && abs(gen_jet_eta)<1.3 && simtrack_len==1 && papasjet_22_e/papasjet_e<0.01')
 
-fitterb = Fitter2D('histo2db','E_{rec}/E_{gen}vsE_{gen} barrel', 200, 0, 100, 200, 0, 2)
+fitterb = Fitter2D('histo2db','E_{rec}/E_{gen}vsE_{gen} barrel', 200, 3, 100, 200, 0, 2)
 tree.Project('histo2db','cmsjet_e/gen_jet_e:gen_jet_e','gen_jet_pt>0 && abs(gen_jet_eta)<1.3 && simtrack_len==1 && cmsjet_22_e/cmsjet_e<0.01')
 fitterb.fit_slices()
 can3b = TCanvas()
@@ -29,7 +29,8 @@ fitterb.hmean.Fit('response', 'B')
 can2b = TCanvas()
 fitterb.hsigma.SetTitle('Fitted value of Sigma barrel')
 fitterb.hsigma.Draw()
-eres = TF1('eres','sqrt(([0]/sqrt(x))**2+[1]**2)')
+eres = TF1('eres','sqrt(([0]/sqrt(x))**2+([1]/x)**2+[2]**2)')
+print 'fit of Eres in barrel'
 fitterb.hsigma.Fit('eres')
 
 comp_endcap = HistComparator(tree, style1 = cms_style, style2 = papas_style,
@@ -39,9 +40,9 @@ comp_endcap = HistComparator(tree, style1 = cms_style, style2 = papas_style,
                       var2 = 'papasjet_e/gen_jet_e',
                       cut2 = 'gen_jet_pt>0 && abs(gen_jet_eta)>1.3 && abs(gen_jet_eta)<3. && simtrack_len==1 && papasjet_22_e/papasjet_e<0.01')
 
-fittere = Fitter2D('histo2de','E_{rec}/E_{gen}vsE_{gen} endcap', 200, 10, 100, 200, 0, 2)
+fittere = Fitter2D('histo2de','E_{rec}/E_{gen}vsE_{gen} endcap', 200, 3, 100, 200, 0, 2)
 tree.Project('histo2de','cmsjet_e/gen_jet_e:gen_jet_e','gen_jet_pt>0 && abs(gen_jet_eta)>1.3 && abs(gen_jet_eta)<3. && simtrack_len==1 && cmsjet_22_e/cmsjet_e<0.01')
-fittere.fit_slices()
+fittere.fit_slices(selection=3)
 can3e = TCanvas()
 fittere.h2d.Draw()
 cane = TCanvas()
@@ -56,4 +57,10 @@ can2e = TCanvas()
 fittere.hsigma.SetTitle('Fitted value of Sigma endcap')
 fittere.hsigma.Draw()
 erese = TF1('erese','sqrt(([0]/sqrt(x))**2+([1]/x)**2+[2]**2)')
-fittere.hsigma.Fit('erese')
+print 'fit of Eres in endcap'
+erese.SetParameter(0, 1.2310019064740882)
+erese.SetParameter(1, 0.0)
+erese.SetParameter(2, 0.18197050066505263)
+#erese.SetParLimits(1, 0.0, 1.)
+erese.SetRange(0.,100.)
+fittere.hsigma.Fit('erese', 'B R')

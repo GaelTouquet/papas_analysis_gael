@@ -13,8 +13,8 @@ from papas_analysis_gael.samples.single_cms import single_charged_hadrons, singl
 # selectedComponents = [single_charged_hadrons, single_neutral_hadrons, single_photons]
 
 #single_neutral_hadrons.files = [single_neutral_hadrons.files[12]]
-selectedComponents = [single_neutral_hadrons]
-single_charged_hadrons.splitFactor = len(single_charged_hadrons.files)
+selectedComponents = [single_charged_hadrons]
+single_charged_hadrons.splitFactor = 1#len(single_charged_hadrons.files)
 single_neutral_hadrons.splitFactor = len(single_neutral_hadrons.files)
 single_photons.splitFactor = len(single_photons.files)
 
@@ -74,7 +74,7 @@ rec_cone_ana = cfg.Analyzer(
 
 pf_cone_ana = cfg.Analyzer(
     ConeAnalyzer,
-    dR = 0.3,
+    dR = 1,
     pivot = 'gen_particles_stable',
     particles = 'pf_particles',
     output = 'pf_cone_particles',
@@ -133,12 +133,9 @@ jet_cone_tree = cfg.Analyzer(
     tree_title = 'jets',
     rec_jet = 'rec_jet',
     pf_jet = 'pf_jet',
-    rec_control_jet = 'rec_control_jet',
-    pf_control_jet = 'pf_control_jet',
+    pf_ptcs = 'pf_cone_particles',
     gen_jet = 'gen_jet',
-    sim_track_jet = 'simtrack_jet',
-    sim_track = 'simtracks',
-    pfcandidates = 'pfcandidates'
+    sim_track = 'simtracks'
     )
 
 from heppy.analyzers.Papas import Papas
@@ -172,15 +169,15 @@ sequence = cfg.Sequence( [
     #gen_filter,
     #gen_counter,
     simtrack_reader,
-    pfcandidate_reader,
+    #pfcandidate_reader,
     papas,
     rec_cone_ana,
     pf_cone_ana,
     gen_jet,
     rec_jet,
     pf_jet,
-    rec_control_jet,
-    pf_control_jet,
+    #rec_control_jet,
+    #pf_control_jet,
     #sim_track_jet,
     jet_cone_tree
     ] )
