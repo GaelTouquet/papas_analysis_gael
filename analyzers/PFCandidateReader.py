@@ -17,6 +17,7 @@ class PFCandidateReader(Analyzer):
         self.readCollections(event.input)
         store = event.input
         pfcand = self.handles['PFCandidate'].product()
+        event.rawpfcand = pfcand
         pfcandidates = map(Particle, pfcand)
         event.pfcandidates = sorted( pfcandidates,
                                     key = lambda ptc: ptc.e(), reverse=True )
