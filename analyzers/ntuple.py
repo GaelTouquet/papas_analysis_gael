@@ -69,3 +69,16 @@ def fillParticles( tree, particles_name, particles ):
          variables['m'])
     vfill(tree, '{particles_name}_dR'.format(particles_name=particles_name),
          variables['dR'])
+
+# def bookPFcand( tree, pfcand_name, nmax_ele):
+#     bookParticle(tree, pfcand_name)
+#     var(tree, '{pfcand_name}_elems_len'.format(pfcand_name=pfcand_name), 
+#         type=int)
+#     vect(tree, '{pfcand_name}_elems_block'.format(pfcand_name=pfcand_name),
+#          '{pfcand_name}_elems_len'.format(pfcand_name=pfcand_name), nmax_ele)
+#     vect(tree, '{pfcand_name}_elems_e'.format(pfcand_name=pfcand_name),
+#          '{pfcand_name}_elems_len'.format(pfcand_name=pfcand_name), nmax_ele)
+#     vect(tree, '{pfcand_name}_elems_pt'.format(pfcand_name=pfcand_name),
+#          '{pfcand_name}_elems_len'.format(pfcand_name=pfcand_name), nmax_ele)
+#     vect(tree, '{pfcand_name}_elems_layer'.format(pfcand_name=pfcand_name),
+#          '{pfcand_name}_elems_len'.format(pfcand_name=pfcand_name), nmax_ele)

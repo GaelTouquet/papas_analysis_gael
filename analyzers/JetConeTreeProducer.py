@@ -24,6 +24,15 @@ class JetConeTreeProducer(Analyzer):
         # bookJet(self.tree, 'simtrack')
         var(self.tree, 'simtrack_len')
         var(self.tree, 'event_id')
+        bookParticles(self.tree, 'tagged', 150)
+        bookParticles(self.tree, 'nottagged', 150)
+        var(self.tree, '130tagged')
+        var(self.tree, '22tagged')
+        var(self.tree, '130nottagged')
+        var(self.tree, '22nottagged')
+        var(self.tree, '11tagged')
+        var(self.tree, 'othertagged')
+        var(self.tree, 'threshold_pass')
         bookParticles(self.tree, 'cms_ptcs', 150)
         
 
@@ -50,8 +59,17 @@ class JetConeTreeProducer(Analyzer):
             fill(self.tree, 'simtrack_len', len(sim_track_ptcs))
         fillParticles(self.tree, 'cms_ptcs', cms_ptcs)
         fill(self.tree, 'event_id', event.input.eventAuxiliary().id().event())
+        fillParticles(self.tree, 'tagged', event.tagged_particles)
+        fillParticles(self.tree, 'nottagged', event.nottagged_particles)
+        fill(self.tree, '130tagged', 1 if event.tagged130 else 0)
+        fill(self.tree, '22tagged', 1 if event.tagged22 else 0)
+        fill(self.tree, '130nottagged', 1 if event.nottagged130 else 0)
+        fill(self.tree, '22nottagged', 1 if event.nottagged22 else 0)
+        fill(self.tree, '11tagged', 1 if event.tagged11 else 0)
+        fill(self.tree, 'othertagged', 1 if event.taggedother else 0)
+        fill(self.tree, 'threshold_pass', 1 if event.threshold_pass else 0)
         self.tree.tree.Fill()
-
+        
     def write(self, setup):
         self.rootfile.Write()
         self.rootfile.Close()

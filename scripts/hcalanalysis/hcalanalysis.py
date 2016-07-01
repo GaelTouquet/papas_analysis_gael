@@ -1,6 +1,7 @@
 from ROOT import TFile, TH1F
 from papas_analysis_gael.tools.style import papas_style, cms_style, cms_style2, papas_style2
 from papas_analysis_gael.tools.HistComparator import HistComparator
+import tdrstyle
 
 fil = TFile('./rootfiles/neutral_hadron_tree.root')
 tree = fil.Get('events')

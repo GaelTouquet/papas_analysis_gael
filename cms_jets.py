@@ -13,8 +13,8 @@ from papas_analysis_gael.samples.single_cms import single_charged_hadrons, singl
 # selectedComponents = [single_charged_hadrons, single_neutral_hadrons, single_photons]
 
 #single_neutral_hadrons.files = [single_neutral_hadrons.files[12]]
-selectedComponents = [single_charged_hadrons]
-single_charged_hadrons.splitFactor = 1#len(single_charged_hadrons.files)
+selectedComponents = [single_neutral_hadrons]
+single_charged_hadrons.splitFactor = len(single_charged_hadrons.files)
 single_neutral_hadrons.splitFactor = len(single_neutral_hadrons.files)
 single_photons.splitFactor = len(single_photons.files)
 
@@ -62,10 +62,15 @@ gen_counter = cfg.Analyzer(
     min_number = 1
 )
 
+from papas_analysis_gael.analyzers.EventTagger import EventTagger
+event_tagger = cfg.Analyzer(
+    EventTagger
+)
+
 from papas_analysis_gael.analyzers.ConeAnalyzer import ConeAnalyzer
 rec_cone_ana = cfg.Analyzer(
     ConeAnalyzer,
-    dR = 0.3,
+    dR = 0.5,
     pivot = 'gen_particles_stable',
     particles = 'rec_particles',
     output = 'rec_cone_particles',
@@ -74,9 +79,9 @@ rec_cone_ana = cfg.Analyzer(
 
 pf_cone_ana = cfg.Analyzer(
     ConeAnalyzer,
-    dR = 1,
+    dR = 0.5,
     pivot = 'gen_particles_stable',
-    particles = 'pf_particles',
+    particles = 'pfcandidates',
     output = 'pf_cone_particles',
     control_output = 'pf_control_cone_particles'
 )
@@ -169,7 +174,7 @@ sequence = cfg.Sequence( [
     #gen_filter,
     #gen_counter,
     simtrack_reader,
-    #pfcandidate_reader,
+    pfcandidate_reader,
     papas,
     rec_cone_ana,
     pf_cone_ana,
@@ -179,6 +184,7 @@ sequence = cfg.Sequence( [
     #rec_control_jet,
     #pf_control_jet,
     #sim_track_jet,
+    event_tagger,
     jet_cone_tree
     ] )
 
@@ -191,4 +197,31 @@ config = cfg.Config(
 )
 
 if __name__ == '__main__':
-    print config
+    import sys
+    from heppy.framework.looper import Looper
+
+    import random
+    random.seed(0xdeadbeef)
+
+    def process(iev=None):
+        if iev is None:
+            iev = loop.iEvent
+        loop.process(iev)
+
+    def next():
+        loop.process(loop.iEvent+1)        
+
+    iev = None
+    if len(sys.argv)==2:
+        iev = int(sys.argv[1])
+        
+    loop = Looper( 'looper', config,
+                   nEvents=1000,
+                   nPrint=0,
+                   timeReport=True)
+
+    if iev is not None:
+        process(iev)
+    else:
+        loop.loop()
+        loop.write()

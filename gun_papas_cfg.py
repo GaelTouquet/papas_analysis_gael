@@ -18,22 +18,60 @@ import math
 
 #TODO colin debug this! 
 from heppy.analyzers.Gun import Gun
-source = cfg.Analyzer(
+source211 = cfg.Analyzer(
     Gun,
     pdgid = 211,
-    thetamin = -1.5,
-    thetamax = 1.5,
-    ptmin = 0.1,
+    thetamin = 0.,
+    thetamax = 0.,
+    phimin = math.pi,
+    phimax = math.pi,
+    ptmin = 10,
     ptmax = 10,
     flat_pt = True,
-)  
+) 
 
-from heppy.analyzers.cms.Reader import CMSReader
-source_ptc = cfg.Analyzer(
-    CMSReader,
-    gen_particles = 'genParticles',
-    pf_particles = 'particleFlow'
-)
+source22 = cfg.Analyzer(
+    Gun,
+    pdgid = 22,
+    thetamin = 0.,
+    thetamax = 0.,
+    phimin = math.pi/2,
+    phimax = math.pi/2,
+    ptmin = 10,
+    ptmax = 10,
+    flat_pt = True,
+) 
+
+source130 = cfg.Analyzer(
+    Gun,
+    pdgid = 130,
+    thetamin = 0.,
+    thetamax = 0.,
+    phimin = 0.,
+    phimax = 0.,
+    ptmin = 10,
+    ptmax = 10,
+    flat_pt = True,
+) 
+
+source11 = cfg.Analyzer(
+    Gun,
+    pdgid = 11,
+    thetamin = 0.,
+    thetamax = 0.,
+    phimin = math.pi/-2,
+    phimax = math.pi/-2,
+    ptmin = 10,
+    ptmax = 10,
+    flat_pt = True,
+) 
+
+# from heppy.analyzers.cms.Reader import CMSReader
+# source_ptc = cfg.Analyzer(
+#     CMSReader,
+#     gen_particles = 'genParticles',
+#     pf_particles = 'particleFlow'
+# )
 
 from ROOT import gSystem
 # gSystem.Load("libdatamodelDict")
@@ -41,7 +79,7 @@ from ROOT import gSystem
 from heppy.framework.eventsgen import Events
 
 from heppy.analyzers.Papas import Papas
-from heppy.papas.detectors.TunedCMS import CMS
+from heppy.papas.detectors.CMS import CMS
 papas = cfg.Analyzer(
     Papas,
     instance_label = 'papas',
@@ -80,65 +118,65 @@ papas = cfg.Analyzer(
 #    rec_jet = 'rec_jets'
 #)
 
-from JetPtcTreeProducer import JetPtcTreeProducer
-jet_tree = cfg.Analyzer(
-    JetPtcTreeProducer,
-    jets = 'gen_jets',
-    tree_name = 'events',
-    tree_title = 'events',
-    particle = 'gen_particles'
-)
+# from JetPtcTreeProducer import JetPtcTreeProducer
+# jet_tree = cfg.Analyzer(
+#     JetPtcTreeProducer,
+#     jets = 'gen_jets',
+#     tree_name = 'events',
+#     tree_title = 'events',
+#     particle = 'gen_particles'
+# )
 
-from heppy.analyzers.fcc.JetClusterizer import JetClusterizer
-rec_jets = cfg.Analyzer(
-    JetClusterizer,
-    instance_label = 'rec_jets',
-    output = 'rec_jets',
-    particles = 'rec_particles',
-    fastjet_args = dict( ptmin = 0.1)
-)
+# from heppy.analyzers.fcc.JetClusterizer import JetClusterizer
+# rec_jets = cfg.Analyzer(
+#     JetClusterizer,
+#     instance_label = 'rec_jets',
+#     output = 'rec_jets',
+#     particles = 'rec_particles',
+#     fastjet_args = dict( ptmin = 0.1)
+# )
 
-pf_jets = cfg.Analyzer(
-    JetClusterizer,
-    instance_label = 'pf_jets',
-    output = 'pf_jets',
-    particles = 'pf_particles',
-    fastjet_args = dict( ptmin = 0.1)
-)
+# pf_jets = cfg.Analyzer(
+#     JetClusterizer,
+#     instance_label = 'pf_jets',
+#     output = 'pf_jets',
+#     particles = 'pf_particles',
+#     fastjet_args = dict( ptmin = 0.1)
+# )
 
 
-gen_jets = cfg.Analyzer(
-    JetClusterizer,
-    instance_label = 'gen_jets',
-    output = 'gen_jets',
-    particles = 'gen_particles_stable',
-    fastjet_args = dict( ptmin = 0.1)
-)
+# gen_jets = cfg.Analyzer(
+#     JetClusterizer,
+#     instance_label = 'gen_jets',
+#     output = 'gen_jets',
+#     particles = 'gen_particles_stable',
+#     fastjet_args = dict( ptmin = 0.1)
+# )
 
-from heppy.analyzers.Matcher import Matcher
-jets_matcher = cfg.Analyzer(
-    Matcher,
-    instance_label = 'jet_match',
-    delta_r = 0.3,
-    match_particles = 'rec_jets',
-    particles = 'gen_jets'
-)
+# from heppy.analyzers.Matcher import Matcher
+# jets_matcher = cfg.Analyzer(
+#     Matcher,
+#     instance_label = 'jet_match',
+#     delta_r = 0.3,
+#     match_particles = 'rec_jets',
+#     particles = 'gen_jets'
+# )
 
-ptc_match = cfg.Analyzer(
-    Matcher,
-    instance_label = 'ptc_match',
-    match_particles = 'rec_particles',
-    particles = 'gen_particles',
-    delta_r = 0.3
-    )
+# ptc_match = cfg.Analyzer(
+#     Matcher,
+#     instance_label = 'ptc_match',
+#     match_particles = 'rec_particles',
+#     particles = 'gen_particles',
+#     delta_r = 0.3
+#     )
 
-from PapasTreeProducer import PapasTreeProducer
-papas_tree = cfg.Analyzer(
-    PapasTreeProducer,
-    tree_name = 'events',
-    tree_title = 'jets',
-    jets = 'gen_jets'
-    )
+# from PapasTreeProducer import PapasTreeProducer
+# papas_tree = cfg.Analyzer(
+#     PapasTreeProducer,
+#     tree_name = 'events',
+#     tree_title = 'jets',
+#     jets = 'gen_jets'
+#     )
 
 
 #from ConeFinder import ConeFinder
@@ -154,12 +192,15 @@ papas_tree = cfg.Analyzer(
 # definition of a sequence of analyzers,
 # the analyzers will process each event in this order
 sequence = cfg.Sequence( [
-    source,
-    papas,
-    gen_jets,
-    rec_jets,
-    jets_matcher,
-    papas_tree
+    source211,
+    source22,
+    source130,
+    source11,
+    papas# ,
+    # gen_jets,
+    # rec_jets,
+    # jets_matcher,
+    # papas_tree
     ] )
  
 config = cfg.Config(

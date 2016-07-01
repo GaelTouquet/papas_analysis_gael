@@ -88,13 +88,13 @@ single_charged_hadrons = cfg.Component(
 
 single_neutral_hadrons = cfg.Component(
     'single_neutral_hadrons',
-    #files = ['/gridgroup/cms/cbernet/data/singleK0L.root']
+    # files = ['/gridgroup/cms/cbernet/data/singleK0L.root']
     files = map(xrootd, single_neutral_hadrons_lfns)
     )
 
 single_photons = cfg.Component(
     'single_photons',
-    #files = ['/gridgroup/cms/cbernet/data/singlePhoton.root']
+    # files = ['/gridgroup/cms/cbernet/data/singlePhoton.root']
     files = map(xrootd, single_photons_lfns)
     )
 

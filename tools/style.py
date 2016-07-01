@@ -33,7 +33,7 @@ papas_style = Style('papas',
                     fillStyle = 0 )
                     
 
-cms_style = Style('cms',
+cms_style = Style('GEANT4',
                   markerStyle = 3,
                   markerColor = 4,
                   markerSize = 1,

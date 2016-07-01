@@ -1,6 +1,6 @@
 from PhysicsTools.Heppy.analyzers.core.Analyzer import Analyzer
 from PhysicsTools.Heppy.analyzers.core.AutoHandle import AutoHandle
-from heppy.particles.cms.particle import Particle 
+from papas_analysis_gael.analyzers.pfcandidate import PFCandidate
 
 class PFCandidateReader(Analyzer):
     
@@ -10,14 +10,11 @@ class PFCandidateReader(Analyzer):
             self.cfg_ana.PFCandidate,
             'std::vector<reco::PFCandidate>'
             )
-        #self.handles['Clusters'] = AutoHandle(
-        #    self.cfg_ana.PFCandidate,
 
     def process(self, event):
         self.readCollections(event.input)
         store = event.input
         pfcand = self.handles['PFCandidate'].product()
-        event.rawpfcand = pfcand
-        pfcandidates = map(Particle, pfcand)
+        pfcandidates = map(PFCandidate, pfcand)
         event.pfcandidates = sorted( pfcandidates,
                                     key = lambda ptc: ptc.e(), reverse=True )
